@@ -2,10 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Operators Library" href="nbox.nbxlib.ops.html" /><link rel="prev" title="Quickstart" href="quick.0.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="nbox.lib package" href="nbox.lib.html" /><link rel="prev" title="QuickStart with NBX-Deploy" href="jobsdeploy.serving.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>nbox.cli module - nbox 0.9.10 documentation</title>
+        <title>nbox.cli module - nbox 0.9.17 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
@@ -120,7 +120,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">nbox 0.9.10 documentation</div></a>
+      <a href="index.html"><div class="brand">nbox 0.9.17 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -143,7 +143,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">nbox 0.9.10 documentation</span>
+  <span class="sidebar-brand-text">nbox 0.9.17 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -154,24 +154,32 @@
   <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="quick.0.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jobsdeploy.job.html">QuickStart with NBX-Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jobsdeploy.serving.html">QuickStart with NBX-Deploy</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">nbox.cli module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nbox.nbxlib.ops.html">Operators Library</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="nbox.lib.html">nbox.lib package</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="nbox.lib.arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbox.lib.aws.html">nbox.lib.aws module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbox.lib.comms.html">nbox.lib.comms module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbox.lib.demo.html">nbox.lib.demo module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbox.lib.dist.html">nbox.lib.dist module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbox.lib.nbx_instances.html">nbox.lib.nbx_instances module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbox.lib.shell.html">nbox.lib.shell module</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Commonly used APIs</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="nbox.model.html">NBX-Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nbox.operator.html">Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nbox.jobs.html">NBX-Jobs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nbox.instance.html">NBX-Build Instances</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nbox.framework.ml.html">nbox.framework.ml</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">R&amp;D</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="nbox.subway.html">Subways</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="nbox.framework.html">Pushing Understanding</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="nbox.framework.ml.html">nbox.framework.ml</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nbox.framework.on_ml.html">ML Frameworks</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="nbox.framework.html">Pushing Understanding</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="nbox.framework.on_operators.html">Framework on Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbox.framework.on_functions.html">nbox.framework.on_functions module</a></li>
 </ul>
 </li>
 </ul>
@@ -180,6 +188,7 @@
 <li class="toctree-l1"><a class="reference internal" href="nbox.messages.html">nbox RPC support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nbox.sub_utils.ssh.html">Engineering behind SSH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nbox.auth.html">nbox Authentications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nbox.relics.html">nbox.relics package</a></li>
 </ul>
 
 </div>
@@ -214,41 +223,16 @@
         <article role="main">
           <div class="section" id="module-nbox.cli">
 <span id="nbox-cli-module"></span><h1>nbox.cli module<a class="headerlink" href="#module-nbox.cli" title="Permalink to this headline">#</a></h1>
-<p>This is CLI for <code class="docutils literal notranslate"><span class="pre">nbox</span></code>, it is meant to be as simple to use as possible.</p>
-<p>..code-block:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>nbx
-├── tunnel
-├── home
-├── compile
-├── get
-├── jobs
-│   [staticmethods]
-│   ├── new
-│   ├── status
-│   [initialisation]
-│       ├── id
-│       └── workspace_id
-│   ├── change_schedule
-│   ├──logs
-│   ├──delete
-│   ├──refresh
-│   ├──trigger
-│   ├──pause
-│   └──resume
-└── build (Instance)
-    [staticmethods]
-    ├── new
-    ├── status
-    [initialisation]
-        ├── i
-        ├── workspace_id
-        └── cs_endpoint
-    ├── refresh
-    ├── start
-    ├── stop
-    ├── delete
-    ├── run_py
-    └── __call__
+<p>This is CLI for <code class="docutils literal notranslate"><span class="pre">nbox</span></code>, it is meant to be as simple to use as possible. We using <code class="docutils literal notranslate"><span class="pre">python-fire</span></code> for building
+our CLI, which means you can access underlying system with same commands as you use with python. For maximum
+convinience we recommend adding an alias for <code class="docutils literal notranslate"><span class="pre">nbx</span></code> as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>zshrc<span class="o">]</span>
+<span class="nb">echo</span> <span class="s2">"\nalias nbx='python3 -m nbox'\n"</span> &gt;&gt; ~/.zshrc
+<span class="nb">source</span> ~/.zshrc
+
+<span class="o">[</span>bashrc<span class="o">]</span>
+<span class="nb">echo</span> <span class="s2">"\nalias nbx='python3 -m nbox'\n"</span> &gt;&gt; ~/.bashrc
+<span class="nb">source</span> ~/.bashrc
 </pre></div>
 </div>
 <dl class="py function">
@@ -269,25 +253,11 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="nbox.cli.login">
 <span class="sig-prename descclassname"><span class="pre">nbox.cli.</span></span><span class="sig-name descname"><span class="pre">login</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/cli.html#login"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.cli.login" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-<dl class="py class">
-<dt class="sig sig-object py" id="nbox.cli.ServeCLINamespace">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nbox.cli.</span></span><span class="sig-name descname"><span class="pre">ServeCLINamespace</span></span><a class="reference internal" href="_modules/nbox/cli.html#ServeCLINamespace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.cli.ServeCLINamespace" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="nbox.cli.ServeCLINamespace.new">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">new</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nbox.cli.ServeCLINamespace.new" title="Permalink to this definition">#</a></dt>
-<dd><p>Create a new folder, this can be run on NBX-Jobs or NBX-Deploy.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>project_name</strong> (<em>str</em>) – The name of the folder</p>
-</dd>
-</dl>
-</dd></dl>
+<dd><p>Re authenticate <code class="docutils literal notranslate"><span class="pre">nbox</span></code>. NOTE: Will remove all added keys to <code class="docutils literal notranslate"><span class="pre">secrets</span></code></p>
 </dd></dl>
 <dl class="py function">
-<dt class="sig sig-object py" id="nbox.cli.get_dict">
-<span class="sig-prename descclassname"><span class="pre">nbox.cli.</span></span><span class="sig-name descname"><span class="pre">get_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/cli.html#get_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.cli.get_dict" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="nbox.cli.version">
+<span class="sig-prename descclassname"><span class="pre">nbox.cli.</span></span><span class="sig-name descname"><span class="pre">version</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/cli.html#version"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.cli.version" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="nbox.cli.main">
@@ -300,23 +270,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="nbox.nbxlib.ops.html">
+          <a class="next-page" href="nbox.lib.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Operators Library</div>
+                <div class="title">nbox.lib package</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="quick.0.html">
+          <a class="prev-page" href="jobsdeploy.serving.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Quickstart</div>
+                <div class="title">QuickStart with NBX-Deploy</div>
                 
               </div>
             </a>

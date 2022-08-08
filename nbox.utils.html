@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>Utils - nbox 0.9.10 documentation</title>
+        <title>Utils - nbox 0.9.17 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
@@ -120,7 +120,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">nbox 0.9.10 documentation</div></a>
+      <a href="index.html"><div class="brand">nbox 0.9.17 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -143,7 +143,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">nbox 0.9.10 documentation</span>
+  <span class="sidebar-brand-text">nbox 0.9.17 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -154,24 +154,32 @@
   <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="quick.0.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jobsdeploy.job.html">QuickStart with NBX-Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jobsdeploy.serving.html">QuickStart with NBX-Deploy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nbox.cli.html">nbox.cli module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nbox.nbxlib.ops.html">Operators Library</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="nbox.lib.html">nbox.lib package</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="nbox.lib.arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbox.lib.aws.html">nbox.lib.aws module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbox.lib.comms.html">nbox.lib.comms module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbox.lib.demo.html">nbox.lib.demo module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbox.lib.dist.html">nbox.lib.dist module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbox.lib.nbx_instances.html">nbox.lib.nbx_instances module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbox.lib.shell.html">nbox.lib.shell module</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Commonly used APIs</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="nbox.model.html">NBX-Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nbox.operator.html">Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nbox.jobs.html">NBX-Jobs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nbox.instance.html">NBX-Build Instances</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nbox.framework.ml.html">nbox.framework.ml</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">R&amp;D</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="nbox.subway.html">Subways</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="nbox.framework.html">Pushing Understanding</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="nbox.framework.ml.html">nbox.framework.ml</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nbox.framework.on_ml.html">ML Frameworks</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="nbox.framework.html">Pushing Understanding</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="nbox.framework.on_operators.html">Framework on Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbox.framework.on_functions.html">nbox.framework.on_functions module</a></li>
 </ul>
 </li>
 </ul>
@@ -180,6 +188,7 @@
 <li class="toctree-l1"><a class="reference internal" href="nbox.messages.html">nbox RPC support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nbox.sub_utils.ssh.html">Engineering behind SSH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nbox.auth.html">nbox Authentications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nbox.relics.html">nbox.relics package</a></li>
 </ul>
 
 </div>
@@ -229,30 +238,54 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">PoolBranch</span></code>: Or how to use multiprocessing, but blocked so you don’t have to give a shit  about it.</p></li>
 </ol>
 <dl class="py class">
-<dt class="sig sig-object py" id="nbox.utils.ENVVARS">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nbox.utils.</span></span><span class="sig-name descname"><span class="pre">ENVVARS</span></span><a class="reference internal" href="_modules/nbox/utils.html#ENVVARS"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.utils.ENVVARS" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="nbox.utils.env">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nbox.utils.</span></span><span class="sig-name descname"><span class="pre">env</span></span><a class="reference internal" href="_modules/nbox/utils.html#env"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.utils.env" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Single namespace for all environment variables.</p>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">NBOX_LOG_LEVEL</span></code>: Logging level for <code class="docutils literal notranslate"><span class="pre">nbox</span></code>, set <a href="#id1"><span class="problematic" id="id2">``</span></a>NBOX_LOG_LEVEL=info|debug|warning”</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">NBOX_JSON_LOG</span></code>: Whether to print json-logs, set <code class="docutils literal notranslate"><span class="pre">NBOX_JSON_LOG=1</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">NBOX_JOB_FOLDER</span></code>: Folder path for the job, set <code class="docutils literal notranslate"><span class="pre">NBOX_JOB_FOLDER=/tmp/nbox/jobs"</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NBOX_NO_AUTH</span></code>: If set <code class="docutils literal notranslate"><span class="pre">secrets</span> <span class="pre">=</span> <span class="pre">None</span></code>, this will break any API request and is good only for local testing</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NBOX_SSH_NO_HOST_CHECKING</span></code>: If set, <code class="docutils literal notranslate"><span class="pre">ssh</span></code> will not check for host key</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NBOX_HOME_DIR</span></code>: By default ~/.nbx folder</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NBOX_USER_TOKEN</span></code>: User token for NimbleBox.ai from &lt;app.nimblebox.ai/secrets&gt;_</p></li>
 </ol>
 <dl class="py method">
-<dt class="sig sig-object py" id="nbox.utils.ENVVARS.NBOX_LOG_LEVEL">
-<span class="sig-name descname"><span class="pre">NBOX_LOG_LEVEL</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nbox.utils.ENVVARS.NBOX_LOG_LEVEL" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="nbox.utils.env.NBOX_LOG_LEVEL">
+<span class="sig-name descname"><span class="pre">NBOX_LOG_LEVEL</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nbox.utils.env.NBOX_LOG_LEVEL" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="nbox.utils.ENVVARS.NBOX_JSON_LOG">
-<span class="sig-name descname"><span class="pre">NBOX_JSON_LOG</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nbox.utils.ENVVARS.NBOX_JSON_LOG" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="nbox.utils.env.NBOX_JSON_LOG">
+<span class="sig-name descname"><span class="pre">NBOX_JSON_LOG</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nbox.utils.env.NBOX_JSON_LOG" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="nbox.utils.ENVVARS.NBOX_JOB_FOLDER">
-<span class="sig-name descname"><span class="pre">NBOX_JOB_FOLDER</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nbox.utils.ENVVARS.NBOX_JOB_FOLDER" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="nbox.utils.env.NBOX_JOB_FOLDER">
+<span class="sig-name descname"><span class="pre">NBOX_JOB_FOLDER</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nbox.utils.env.NBOX_JOB_FOLDER" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="nbox.utils.ENVVARS.NBOX_NO_AUTH">
-<span class="sig-name descname"><span class="pre">NBOX_NO_AUTH</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nbox.utils.ENVVARS.NBOX_NO_AUTH" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="nbox.utils.env.NBOX_NO_AUTH">
+<span class="sig-name descname"><span class="pre">NBOX_NO_AUTH</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nbox.utils.env.NBOX_NO_AUTH" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.utils.env.NBOX_SSH_NO_HOST_CHECKING">
+<span class="sig-name descname"><span class="pre">NBOX_SSH_NO_HOST_CHECKING</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nbox.utils.env.NBOX_SSH_NO_HOST_CHECKING" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.utils.env.NBOX_HOME_DIR">
+<span class="sig-name descname"><span class="pre">NBOX_HOME_DIR</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nbox.utils.env.NBOX_HOME_DIR" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.utils.env.NBOX_USER_TOKEN">
+<span class="sig-name descname"><span class="pre">NBOX_USER_TOKEN</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nbox.utils.env.NBOX_USER_TOKEN" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.utils.env.NBOX_NO_LOAD_GRPC">
+<span class="sig-name descname"><span class="pre">NBOX_NO_LOAD_GRPC</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nbox.utils.env.NBOX_NO_LOAD_GRPC" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.utils.env.NBOX_NO_LOAD_WS">
+<span class="sig-name descname"><span class="pre">NBOX_NO_LOAD_WS</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nbox.utils.env.NBOX_NO_LOAD_WS" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 </dd></dl>
 <dl class="py function">
@@ -260,14 +293,27 @@
 <span class="sig-prename descclassname"><span class="pre">nbox.utils.</span></span><span class="sig-name descname"><span class="pre">get_logger</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/utils.html#get_logger"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.utils.get_logger" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 <dl class="py function">
+<dt class="sig sig-object py" id="nbox.utils.deprecation_warning">
+<span class="sig-prename descclassname"><span class="pre">nbox.utils.</span></span><span class="sig-name descname"><span class="pre">deprecation_warning</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replace_by</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">help</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/utils.html#deprecation_warning"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.utils.deprecation_warning" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="nbox.utils.load_module_from_path">
+<span class="sig-prename descclassname"><span class="pre">nbox.utils.</span></span><span class="sig-name descname"><span class="pre">load_module_from_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/utils.html#load_module_from_path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.utils.load_module_from_path" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="nbox.utils.FileLogger">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nbox.utils.</span></span><span class="sig-name descname"><span class="pre">FileLogger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/utils.html#FileLogger"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.utils.FileLogger" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Flush logs to a file, useful when we don’t want to mess with current logging</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.utils.FileLogger.log">
+<span class="sig-name descname"><span class="pre">log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/utils.html#FileLogger.log"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.utils.FileLogger.log" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+</dd></dl>
+<dl class="py function">
 <dt class="sig sig-object py" id="nbox.utils.log_and_exit">
 <span class="sig-prename descclassname"><span class="pre">nbox.utils.</span></span><span class="sig-name descname"><span class="pre">log_and_exit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/utils.html#log_and_exit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.utils.log_and_exit" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
-<dl class="py class">
-<dt class="sig sig-object py" id="nbox.utils.Fn">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nbox.utils.</span></span><span class="sig-name descname"><span class="pre">Fn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requirements</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/utils.html#Fn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.utils.Fn" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-</dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="nbox.utils.isthere">
 <span class="sig-prename descclassname"><span class="pre">nbox.utils.</span></span><span class="sig-name descname"><span class="pre">isthere</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">packages</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">soft</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/utils.html#isthere"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.utils.isthere" title="Permalink to this definition">#</a></dt>
@@ -316,6 +362,10 @@
 <span class="sig-prename descclassname"><span class="pre">nbox.utils.</span></span><span class="sig-name descname"><span class="pre">hash_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'md5'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/utils.html#hash_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.utils.hash_" title="Permalink to this definition">#</a></dt>
 <dd><p>Hash sting of any item</p>
 </dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="nbox.utils.log_traceback">
+<span class="sig-prename descclassname"><span class="pre">nbox.utils.</span></span><span class="sig-name descname"><span class="pre">log_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/utils.html#log_traceback"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.utils.log_traceback" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="nbox.utils.DBase">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nbox.utils.</span></span><span class="sig-name descname"><span class="pre">DBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/utils.html#DBase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.utils.DBase" title="Permalink to this definition">#</a></dt>

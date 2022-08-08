@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="NBX-Build Instances" href="nbox.instance.html" /><link rel="prev" title="Operators" href="nbox.operator.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>NBX-Jobs - nbox 0.9.10 documentation</title>
+        <title>NBX-Jobs - nbox 0.9.17 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
@@ -120,7 +120,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">nbox 0.9.10 documentation</div></a>
+      <a href="index.html"><div class="brand">nbox 0.9.17 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -143,7 +143,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">nbox 0.9.10 documentation</span>
+  <span class="sidebar-brand-text">nbox 0.9.17 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -154,24 +154,32 @@
   <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="quick.0.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jobsdeploy.job.html">QuickStart with NBX-Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jobsdeploy.serving.html">QuickStart with NBX-Deploy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nbox.cli.html">nbox.cli module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nbox.nbxlib.ops.html">Operators Library</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="nbox.lib.html">nbox.lib package</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="nbox.lib.arch.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbox.lib.aws.html">nbox.lib.aws module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbox.lib.comms.html">nbox.lib.comms module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbox.lib.demo.html">nbox.lib.demo module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbox.lib.dist.html">nbox.lib.dist module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbox.lib.nbx_instances.html">nbox.lib.nbx_instances module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbox.lib.shell.html">nbox.lib.shell module</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Commonly used APIs</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="nbox.model.html">NBX-Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nbox.operator.html">Operators</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">NBX-Jobs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nbox.instance.html">NBX-Build Instances</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nbox.framework.ml.html">nbox.framework.ml</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">R&amp;D</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="nbox.subway.html">Subways</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="nbox.framework.html">Pushing Understanding</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="nbox.framework.ml.html">nbox.framework.ml</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nbox.framework.on_ml.html">ML Frameworks</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="nbox.framework.html">Pushing Understanding</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="nbox.framework.on_operators.html">Framework on Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbox.framework.on_functions.html">nbox.framework.on_functions module</a></li>
 </ul>
 </li>
 </ul>
@@ -180,6 +188,7 @@
 <li class="toctree-l1"><a class="reference internal" href="nbox.messages.html">nbox RPC support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nbox.sub_utils.ssh.html">Engineering behind SSH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nbox.auth.html">nbox Authentications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nbox.relics.html">nbox.relics package</a></li>
 </ul>
 
 </div>
@@ -214,35 +223,88 @@
         <article role="main">
           <div class="section" id="module-nbox.jobs">
 <span id="nbx-jobs"></span><h1>NBX-Jobs<a class="headerlink" href="#module-nbox.jobs" title="Permalink to this headline">#</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">nbox.Job</span></code> is a wrapper to the APIs that’s it.</p>
+<p><code class="docutils literal notranslate"><span class="pre">nbox.Job</span></code> and <code class="docutils literal notranslate"><span class="pre">nbox.Serve</span></code> are wrappers to the NBX-Jobs and NBX-Deploy APIs and contains staticmethods for convinience from the CLI.</p>
 <p class="rubric">Notes</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">datetime.now(timezone.utc)</span></code> is incorrect, use <a class="reference external" href="https://blog.ganssle.io/articles/2019/11/utcnow.html">this</a> method.</p></li>
 </ul>
 <dl class="py function">
 <dt class="sig sig-object py" id="nbox.jobs.new">
-<span class="sig-prename descclassname"><span class="pre">nbox.jobs.</span></span><span class="sig-name descname"><span class="pre">new</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/jobs.html#new"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.jobs.new" title="Permalink to this definition">#</a></dt>
-<dd><p>Create a new folder, this can be run on NBX-Jobs or NBX-Deploy.</p>
+<span class="sig-prename descclassname"><span class="pre">nbox.jobs.</span></span><span class="sig-name descname"><span class="pre">new</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/jobs.html#new"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.jobs.new" title="Permalink to this definition">#</a></dt>
+<dd><p>This creates a single folder that can be used with both NBX-Jobs and NBX-Deploy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>folder_name</strong> (<em>str</em>) – The name of the job folder</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="nbox.jobs.upload_job_folder">
+<span class="sig-prename descclassname"><span class="pre">nbox.jobs.</span></span><span class="sig-name descname"><span class="pre">upload_job_folder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_or_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">workspace_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/jobs.html#upload_job_folder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.jobs.upload_job_folder" title="Permalink to this definition">#</a></dt>
+<dd><p>Upload the code for a job to the NBX-Jobs if not present, it will create a new Job.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>project_name</strong> (<em>str</em>) – The name of the job folder</p></li>
-<li><p><strong>b</strong> (<em>bool</em><em>, </em><em>def. 'False'</em>) – If True, then job will run on an instance</p></li>
-<li><p><strong>workspace_id</strong> (<em>str</em><em>, </em><em>def. 'None'</em>) – If defined, that workspace will be used
-else personal workspace will be used</p></li>
+<li><p><strong>init_folder</strong> (<em>str</em>) – folder with all the relevant files</p></li>
+<li><p><strong>id_or_name</strong> (<em>str</em>) – Job ID or name</p></li>
+<li><p><strong>workspace_id</strong> (<em>str</em><em>, </em><em>optional</em>) – Workspace ID, <cite>None</cite> for personal workspace. Defaults to None.</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 <dl class="py function">
-<dt class="sig sig-object py" id="nbox.jobs.new_model">
-<span class="sig-prename descclassname"><span class="pre">nbox.jobs.</span></span><span class="sig-name descname"><span class="pre">new_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/jobs.html#new_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.jobs.new_model" title="Permalink to this definition">#</a></dt>
-<dd><p>Create a new folder, this can be run on NBX-Jobs or NBX-Deploy.</p>
+<dt class="sig sig-object py" id="nbox.jobs.print_serving_list">
+<span class="sig-prename descclassname"><span class="pre">nbox.jobs.</span></span><span class="sig-name descname"><span class="pre">print_serving_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workspace_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'created_on'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/jobs.html#print_serving_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.jobs.print_serving_list" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="nbox.jobs.serving_forward">
+<span class="sig-prename descclassname"><span class="pre">nbox.jobs.</span></span><span class="sig-name descname"><span class="pre">serving_forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_or_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">workspace_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/jobs.html#serving_forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.jobs.serving_forward" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="nbox.jobs.Serve">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nbox.jobs.</span></span><span class="sig-name descname"><span class="pre">Serve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">workspace_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/jobs.html#Serve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.jobs.Serve" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Python wrapper for NBX-Serving gRPC API</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>project_name</strong> (<em>str</em>) – The name of the folder</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<em>str</em>) – Deployment ID</p></li>
+<li><p><strong>workspace_id</strong> (<em>str</em><em>, </em><em>optional</em>) – If None personal workspace is used. Defaults to None.</p></li>
+</ul>
 </dd>
 </dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.jobs.Serve.new">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">new</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nbox.jobs.Serve.new" title="Permalink to this definition">#</a></dt>
+<dd><p>This creates a single folder that can be used with both NBX-Jobs and NBX-Deploy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>folder_name</strong> (<em>str</em>) – The name of the job folder</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.jobs.Serve.status">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workspace_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'created_on'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nbox.jobs.Serve.status" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.jobs.Serve.upload">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">upload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">init_folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_or_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">workspace_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nbox.jobs.Serve.upload" title="Permalink to this definition">#</a></dt>
+<dd><p>Upload the code for a job to the NBX-Jobs if not present, it will create a new Job.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>init_folder</strong> (<em>str</em>) – folder with all the relevant files</p></li>
+<li><p><strong>id_or_name</strong> (<em>str</em>) – Job ID or name</p></li>
+<li><p><strong>workspace_id</strong> (<em>str</em><em>, </em><em>optional</em>) – Workspace ID, <cite>None</cite> for personal workspace. Defaults to None.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.jobs.Serve.forward">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_or_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">workspace_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nbox.jobs.Serve.forward" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="nbox.jobs.get_job_list">
@@ -264,16 +326,11 @@ else personal workspace will be used</p></li>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="nbox.jobs.Job.new">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">new</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nbox.jobs.Job.new" title="Permalink to this definition">#</a></dt>
-<dd><p>Create a new folder, this can be run on NBX-Jobs or NBX-Deploy.</p>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">new</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nbox.jobs.Job.new" title="Permalink to this definition">#</a></dt>
+<dd><p>This creates a single folder that can be used with both NBX-Jobs and NBX-Deploy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>project_name</strong> (<em>str</em>) – The name of the job folder</p></li>
-<li><p><strong>b</strong> (<em>bool</em><em>, </em><em>def. 'False'</em>) – If True, then job will run on an instance</p></li>
-<li><p><strong>workspace_id</strong> (<em>str</em><em>, </em><em>def. 'None'</em>) – If defined, that workspace will be used
-else personal workspace will be used</p></li>
-</ul>
+<dd class="field-odd"><p><strong>folder_name</strong> (<em>str</em>) – The name of the job folder</p>
 </dd>
 </dl>
 </dd></dl>
@@ -283,8 +340,26 @@ else personal workspace will be used</p></li>
 <dd><p>Get list of jobs, optionally in a workspace</p>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="nbox.jobs.Job.upload">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">upload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">init_folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_or_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">workspace_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nbox.jobs.Job.upload" title="Permalink to this definition">#</a></dt>
+<dd><p>Upload the code for a job to the NBX-Jobs if not present, it will create a new Job.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>init_folder</strong> (<em>str</em>) – folder with all the relevant files</p></li>
+<li><p><strong>id_or_name</strong> (<em>str</em>) – Job ID or name</p></li>
+<li><p><strong>workspace_id</strong> (<em>str</em><em>, </em><em>optional</em>) – Workspace ID, <cite>None</cite> for personal workspace. Defaults to None.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="nbox.jobs.Job.exists">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">exists</span></span><a class="headerlink" href="#nbox.jobs.Job.exists" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="nbox.jobs.Job.change_schedule">
-<span class="sig-name descname"><span class="pre">change_schedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_schedule</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="nbox.network.html#nbox.network.Schedule" title="nbox.network.Schedule"><span class="pre">Schedule</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/jobs.html#Job.change_schedule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.jobs.Job.change_schedule" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">change_schedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_schedule</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#nbox.jobs.Schedule" title="nbox.jobs.Schedule"><span class="pre">nbox.jobs.Schedule</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/jobs.html#Job.change_schedule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.jobs.Job.change_schedule" title="Permalink to this definition">#</a></dt>
 <dd><p>Change schedule this job</p>
 </dd></dl>
 <dl class="py method">
@@ -311,12 +386,73 @@ else personal workspace will be used</p></li>
 <dt class="sig sig-object py" id="nbox.jobs.Job.pause">
 <span class="sig-name descname"><span class="pre">pause</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/jobs.html#Job.pause"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.jobs.Job.pause" title="Permalink to this definition">#</a></dt>
 <dd><p>Pause the execution of this job.</p>
-<p>WARNING: This will remove all the scheduled runs, if present</p>
+<p>WARNING: This will “cancel” all the scheduled runs, if present</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="nbox.jobs.Job.resume">
 <span class="sig-name descname"><span class="pre">resume</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/jobs.html#Job.resume"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.jobs.Job.resume" title="Permalink to this definition">#</a></dt>
 <dd><p>Resume the Job with the current schedule, if provided else simlpy sets status as ACTIVE</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.jobs.Job.get_runs">
+<span class="sig-name descname"><span class="pre">get_runs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'s_no'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reverse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/jobs.html#Job.get_runs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.jobs.Job.get_runs" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.jobs.Job.display_runs">
+<span class="sig-name descname"><span class="pre">display_runs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'created_at'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/jobs.html#Job.display_runs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.jobs.Job.display_runs" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="nbox.jobs.Schedule">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nbox.jobs.</span></span><span class="sig-name descname"><span class="pre">Schedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hour</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minute</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">days</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">months</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">starts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime.datetime</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ends</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime.datetime</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/jobs.html#Schedule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.jobs.Schedule" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Make scheduling natural.</p>
+<p>Usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 4:20 everyday</span>
+<span class="n">Schedule</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># 4:20 every friday</span>
+<span class="n">Schedule</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="p">[</span><span class="s2">"fri"</span><span class="p">])</span>
+
+<span class="c1"># 4:20 every friday from jan to feb</span>
+<span class="n">Schedule</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="p">[</span><span class="s2">"fri"</span><span class="p">],</span> <span class="p">[</span><span class="s2">"jan"</span><span class="p">,</span> <span class="s2">"feb"</span><span class="p">])</span>
+
+<span class="c1"># 4:20 everyday starting in 2 days and runs for 3 days</span>
+<span class="n">starts</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">timezone</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># NOTE: that time is in UTC</span>
+<span class="n">Schedule</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">starts</span> <span class="o">=</span> <span class="n">starts</span><span class="p">,</span> <span class="n">ends</span> <span class="o">=</span> <span class="n">starts</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span> <span class="o">=</span> <span class="mi">3</span><span class="p">))</span>
+
+<span class="c1"># Every 1 hour</span>
+<span class="n">Schedule</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Every 69 minutes</span>
+<span class="n">Schedule</span><span class="p">(</span><span class="n">minute</span> <span class="o">=</span> <span class="mi">69</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hour</strong> (<em>int</em>) – Hour of the day, if only this value is passed it will run every <code class="docutils literal notranslate"><span class="pre">hour</span></code></p></li>
+<li><p><strong>minute</strong> (<em>int</em>) – Minute of the hour, if only this value is passed it will run every <code class="docutils literal notranslate"><span class="pre">minute</span></code></p></li>
+<li><p><strong>days</strong> (<em>str/list</em><em>, </em><em>optional</em>) – List of days (first three chars) of the week, if not passed it will run every day.</p></li>
+<li><p><strong>months</strong> (<em>str/list</em><em>, </em><em>optional</em>) – List of months (first three chars) of the year, if not passed it will run every month.</p></li>
+<li><p><strong>starts</strong> (<em>datetime</em><em>, </em><em>optional</em>) – UTC Start time of the schedule, if not passed it will start now.</p></li>
+<li><p><strong>ends</strong> (<em>datetime</em><em>, </em><em>optional</em>) – UTC End time of the schedule, if not passed it will end in 7 days.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="nbox.jobs.Schedule.cron">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cron</span></span><a class="headerlink" href="#nbox.jobs.Schedule.cron" title="Permalink to this definition">#</a></dt>
+<dd><p>Cron string</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.jobs.Schedule.get_dict">
+<span class="sig-name descname"><span class="pre">get_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/jobs.html#Schedule.get_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.jobs.Schedule.get_dict" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.jobs.Schedule.get_message">
+<span class="sig-name descname"><span class="pre">get_message</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">job_pb2.Schedule</span></span></span><a class="reference internal" href="_modules/nbox/jobs.html#Schedule.get_message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.jobs.Schedule.get_message" title="Permalink to this definition">#</a></dt>
+<dd><p>Get the JobProto.Schedule object for this Schedule</p>
 </dd></dl>
 </dd></dl>
 </div>
