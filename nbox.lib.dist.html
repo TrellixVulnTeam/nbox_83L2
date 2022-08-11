@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="nbox.lib.nbx_instances module" href="nbox.lib.nbx_instances.html" /><link rel="prev" title="nbox.lib.demo module" href="nbox.lib.demo.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>nbox.lib.dist module - nbox 0.9.17 documentation</title>
+        <title>nbox.lib.dist module - nbox 0.9.20 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
@@ -120,7 +120,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">nbox 0.9.17 documentation</div></a>
+      <a href="index.html"><div class="brand">nbox 0.9.20 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -143,7 +143,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">nbox 0.9.17 documentation</span>
+  <span class="sidebar-brand-text">nbox 0.9.20 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -165,6 +165,7 @@
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">nbox.lib.dist module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nbox.lib.nbx_instances.html">nbox.lib.nbx_instances module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nbox.lib.shell.html">nbox.lib.shell module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbox.lib.notebook.html">Notebook Operators</a></li>
 </ul>
 </li>
 </ul>
@@ -227,7 +228,7 @@
 process managements. The code here is tested along with <code class="docutils literal notranslate"><span class="pre">nbox.Relic</span></code> to perform distributed local processing.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="nbox.lib.dist.RootRunner">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nbox.lib.dist.</span></span><span class="sig-name descname"><span class="pre">RootRunner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="nbox.operator.html#nbox.operator.Operator" title="nbox.operator.Operator"><span class="pre">nbox.operator.Operator</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_unittest</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/lib/dist.html#RootRunner"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.lib.dist.RootRunner" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nbox.lib.dist.</span></span><span class="sig-name descname"><span class="pre">RootRunner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">nbox.operator.Operator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_unittest</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/lib/dist.html#RootRunner"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.lib.dist.RootRunner" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="nbox.operator.html#nbox.operator.Operator" title="nbox.operator.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">nbox.operator.Operator</span></code></a></p>
 <p>This is the Operator which runs on the main Job pod and stores all the values</p>
 <dl class="py method">
@@ -249,7 +250,7 @@ process managements. The code here is tested along with <code class="docutils li
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="nbox.lib.dist.AgentOpRootStub">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nbox.lib.dist.</span></span><span class="sig-name descname"><span class="pre">AgentOpRootStub</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op:</span> <span class="pre">nbox.operator.Operator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op_name:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res:</span> <span class="pre">job_pb2.Resource</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relic:</span> <span class="pre">&lt;nbox.relics.relic.Relic</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x1101a0970&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/lib/dist.html#AgentOpRootStub"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.lib.dist.AgentOpRootStub" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nbox.lib.dist.</span></span><span class="sig-name descname"><span class="pre">AgentOpRootStub</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op:</span> <span class="pre">nbox.operator.Operator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op_name:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res:</span> <span class="pre">job_pb2.Resource</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relic:</span> <span class="pre">&lt;nbox.relics.relic.Relic</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x105eb1490&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/lib/dist.html#AgentOpRootStub"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.lib.dist.AgentOpRootStub" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="nbox.operator.html#nbox.operator.Operator" title="nbox.operator.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">nbox.operator.Operator</span></code></a></p>
 <p>This is the root stub for the remote job. In the current implementation it will spin up a new process
 and manage the connections and things for it.</p>

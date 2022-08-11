@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>Jobs + Deploy FAQs - nbox 0.9.17 documentation</title>
+        <title>Jobs + Deploy FAQs - nbox 0.9.20 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
@@ -120,7 +120,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">nbox 0.9.17 documentation</div></a>
+      <a href="index.html"><div class="brand">nbox 0.9.20 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -143,7 +143,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">nbox 0.9.17 documentation</span>
+  <span class="sidebar-brand-text">nbox 0.9.20 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -165,6 +165,7 @@
 <li class="toctree-l2"><a class="reference internal" href="nbox.lib.dist.html">nbox.lib.dist module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nbox.lib.nbx_instances.html">nbox.lib.nbx_instances module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nbox.lib.shell.html">nbox.lib.shell module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nbox.lib.notebook.html">Notebook Operators</a></li>
 </ul>
 </li>
 </ul>
@@ -232,6 +233,19 @@ starts with reasonable default for most of the workloads.</p>
 <p><strong>How to run jobs at schedule?</strong></p>
 <p>Open <code class="docutils literal notranslate"><span class="pre">nbx_user.py</span></code> file and you will see <code class="docutils literal notranslate"><span class="pre">get_schedule</span></code> function that can used to modify schedule for your Job. Note that
 this is not used when uploading a serving.</p>
+<p><strong>How can I run distributed computing?</strong></p>
+<p>tl;dr WIP, will be released along with NBX-Relics.</p>
+<p>This is a super important question. It is easy to have a lot of false positives when it comes to distributed computing. When
+user writes a script (or any piece of code) what they are expecting is that it will run across a bunch of machines and get me
+back the results where ever the query is being made from. It’s hard but we are working on it.</p>
+<p><strong>How can I run a notebook with Jobs?</strong></p>
+<p>There is built in support for running jupyter notebooks using <cite>nbox.lib.notebook.NotebookRunner</cite> Operator. This takes in the
+path of the notebook and it will run it on the cloud, and that is the API contract. Now the underlying mechanisms to do so
+will keep on changing as we keep upgrading our technology. Example usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filepath</span> <span class="o">=</span> <span class="s2">"trainer_v12_2.ipynb"</span>
+<span class="n">op</span> <span class="o">=</span> <span class="n">NotebookRunner</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 
         </article>

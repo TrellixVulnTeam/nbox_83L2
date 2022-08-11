@@ -2,9 +2,11 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="#" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Operators" href="nbox.operator.html" /><link rel="prev" title="nbox.lib.shell module" href="nbox.lib.shell.html" />
 
-    <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/><title>Search - nbox 0.9.20 documentation</title><link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
+        <title>Notebook Operators - nbox 0.9.20 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
     
@@ -143,19 +145,19 @@
   
   <span class="sidebar-brand-text">nbox 0.9.20 documentation</span>
   
-</a><form class="sidebar-search-container" method="get" action="#" role="search">
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="quick.0.html">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="jobsdeploy.job.html">QuickStart with NBX-Jobs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="jobsdeploy.serving.html">QuickStart with NBX-Deploy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nbox.cli.html">nbox.cli module</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="nbox.lib.html">nbox.lib package</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="nbox.lib.html">nbox.lib package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="nbox.lib.arch.html">Architecture</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nbox.lib.aws.html">nbox.lib.aws module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nbox.lib.comms.html">nbox.lib.comms module</a></li>
@@ -163,7 +165,7 @@
 <li class="toctree-l2"><a class="reference internal" href="nbox.lib.dist.html">nbox.lib.dist module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nbox.lib.nbx_instances.html">nbox.lib.nbx_instances module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nbox.lib.shell.html">nbox.lib.shell module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nbox.lib.notebook.html">Notebook Operators</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Notebook Operators</a></li>
 </ul>
 </li>
 </ul>
@@ -220,25 +222,92 @@
           </label>
         </div>
         <article role="main">
-          
-<noscript>
-<div class="admonition error">
-  <p class="admonition-title">Error</p>
-  <p>
-    Please activate JavaScript to enable the search functionality.
-  </p>
+          <div class="section" id="module-nbox.lib.notebook">
+<span id="notebook-operators"></span><h1>Notebook Operators<a class="headerlink" href="#module-nbox.lib.notebook" title="Permalink to this headline">#</a></h1>
+<p>Jupyter Notebooks are user by millions of developers world wide, so we said why not just
+create an operator that runs the jupyter notebook and creates a python file out of it.
+Catch: Currently we do not support notebooks that have a <code class="docutils literal notranslate"><span class="pre">!</span></code> for shell commands, please
+replace them with <code class="docutils literal notranslate"><span class="pre">subprocess.call(shelex.split(&lt;com&gt;))</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nbox.lib.notebook</span> <span class="kn">import</span> <span class="n">NotebookRunner</span>
+<span class="n">op</span> <span class="o">=</span> <span class="n">NotebookRunner</span><span class="p">(</span><span class="s2">"./sample.ipynb"</span><span class="p">)</span>
+<span class="n">op</span><span class="p">()</span> <span class="c1"># call and it will do the rest</span>
+</pre></div>
 </div>
-</noscript>
-
-<div id="search-results"></div>
+<dl class="py function">
+<dt class="sig sig-object py" id="nbox.lib.notebook.get_py_builtin_all">
+<span class="sig-prename descclassname"><span class="pre">nbox.lib.notebook.</span></span><span class="sig-name descname"><span class="pre">get_py_builtin_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/lib/notebook.html#get_py_builtin_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.lib.notebook.get_py_builtin_all" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="nbox.lib.notebook.get_package_version">
+<span class="sig-prename descclassname"><span class="pre">nbox.lib.notebook.</span></span><span class="sig-name descname"><span class="pre">get_package_version</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'tensorflow'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/lib/notebook.html#get_package_version"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.lib.notebook.get_package_version" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="nbox.lib.notebook.ImportNodeVisitor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nbox.lib.notebook.</span></span><span class="sig-name descname"><span class="pre">ImportNodeVisitor</span></span><a class="reference internal" href="_modules/nbox/lib/notebook.html#ImportNodeVisitor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.lib.notebook.ImportNodeVisitor" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ast.NodeVisitor</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.lib.notebook.ImportNodeVisitor.visit_Import">
+<span class="sig-name descname"><span class="pre">visit_Import</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ast.Import</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/lib/notebook.html#ImportNodeVisitor.visit_Import"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.lib.notebook.ImportNodeVisitor.visit_Import" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.lib.notebook.ImportNodeVisitor.visit_ImportFrom">
+<span class="sig-name descname"><span class="pre">visit_ImportFrom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ast.ImportFrom</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/lib/notebook.html#ImportNodeVisitor.visit_ImportFrom"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.lib.notebook.ImportNodeVisitor.visit_ImportFrom" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="nbox.lib.notebook.process_codeblocks">
+<span class="sig-prename descclassname"><span class="pre">nbox.lib.notebook.</span></span><span class="sig-name descname"><span class="pre">process_codeblocks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cells</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/nbox/lib/notebook.html#process_codeblocks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.lib.notebook.process_codeblocks" title="Permalink to this definition">#</a></dt>
+<dd><p>This function is responsible for unpacking the code blocks and creating the python file from it.</p>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="nbox.lib.notebook.update_requirements">
+<span class="sig-prename descclassname"><span class="pre">nbox.lib.notebook.</span></span><span class="sig-name descname"><span class="pre">update_requirements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">req_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mod_versions</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/lib/notebook.html#update_requirements"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.lib.notebook.update_requirements" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="nbox.lib.notebook.NotebookRunner">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nbox.lib.notebook.</span></span><span class="sig-name descname"><span class="pre">NotebookRunner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nb</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outfile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'out.py'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/lib/notebook.html#NotebookRunner"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.lib.notebook.NotebookRunner" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="nbox.operator.html#nbox.operator.Operator" title="nbox.operator.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">nbox.operator.Operator</span></code></a></p>
+<p>Run any notebook as a python file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nb</strong> (<em>str</em>) – path to the notebook file</p></li>
+<li><p><strong>outfile</strong> (<em>str</em>) – path to the python file to be created</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.lib.notebook.NotebookRunner.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/lib/notebook.html#NotebookRunner.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.lib.notebook.NotebookRunner.forward" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+</dd></dl>
+</div>
 
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="nbox.operator.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Operators</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="nbox.lib.shell.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">nbox.lib.shell module</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -270,8 +339,5 @@
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/scripts/furo.js"></script>
-    
-<script src="_static/searchtools.js"></script>
-<script src="_static/language_data.js"></script>
-<script src="searchindex.js"></script></body>
+    </body>
 </html>
