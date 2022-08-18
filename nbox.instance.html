@@ -131,7 +131,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -216,7 +216,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -227,6 +227,22 @@
 <p>NBX-Build Instances are APIs to your machines. These APIs can be used to change state of the machine (start, stop,
 etc.), can be used to transfer files to and from the machine (using <code class="docutils literal notranslate"><span class="pre">Instance.mv</span></code> commands), calling any shell
 command using <code class="docutils literal notranslate"><span class="pre">Instance.remote</span></code>.</p>
+<div class="section" id="cli-commands">
+<h2>CLI Commands<a class="headerlink" href="#cli-commands" title="Permalink to this headline">#</a></h2>
+<p>Build comes built in with several functions to move and list files from the instance. All you need to know is that
+cloud files have prefix <code class="docutils literal notranslate"><span class="pre">nbx://</span></code> which is where your projects are. Here’s a quick list:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># move files</span>
+nbx build -i <span class="s1">'instance_name'</span> --workspace_id <span class="s1">'workspace_id'</span>     mv ./local_file nbx://cloud_file
+
+<span class="c1"># or move folders</span>
+nbx build -i <span class="s1">'instance_name'</span> --workspace_id <span class="s1">'workspace_id'</span>     mv ./local_folder nbx://in_this/folder/
+</pre></div>
+</div>
+<p>You might be required to agree to the SSH connection being setup. If you want to avoid that set <code class="docutils literal notranslate"><span class="pre">NBOX_SSH_NO_HOST_CHECKING=1</span></code>.
+All these APIs are also available in python.</p>
+</div>
+<div class="section" id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="nbox.instance.print_status">
 <span class="sig-prename descclassname"><span class="pre">nbox.instance.</span></span><span class="sig-name descname"><span class="pre">print_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workspace_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fields</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/instance.html#print_status"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.instance.print_status" title="Permalink to this definition">#</a></dt>
@@ -340,6 +356,7 @@ any command.</p>
 </dd></dl>
 </dd></dl>
 </div>
+</div>
 
         </article>
       </div>
@@ -386,8 +403,28 @@ any command.</p>
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">NBX-Build Instances</a><ul>
+<li><a class="reference internal" href="#cli-commands">CLI Commands</a></li>
+<li><a class="reference internal" href="#documentation">Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
