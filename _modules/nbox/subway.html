@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>nbox.subway - nbox 0.9.20 documentation</title>
+        <title>nbox.subway - nbox 0.9.24 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
@@ -120,7 +120,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">nbox 0.9.20 documentation</div></a>
+      <a href="../../index.html"><div class="brand">nbox 0.9.24 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -143,7 +143,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
   
   
-  <span class="sidebar-brand-text">nbox 0.9.20 documentation</span>
+  <span class="sidebar-brand-text">nbox 0.9.24 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -254,7 +254,7 @@
 <span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">lru_cache</span>
 <span class="kn">from</span> <span class="nn">json</span> <span class="kn">import</span> <span class="n">dumps</span> <span class="k">as</span> <span class="n">json_dumps</span>
 
-<span class="kn">from</span> <span class="nn">nbox.utils</span> <span class="kn">import</span> <span class="n">logger</span><span class="p">,</span> <span class="n">log_and_exit</span>
+<span class="kn">from</span> <span class="nn">nbox.utils</span> <span class="kn">import</span> <span class="n">logger</span>
 
 <span class="n">TIMEOUT_CALLS</span> <span class="o">=</span> <span class="mi">60</span>
 
@@ -365,6 +365,10 @@
   <span class="k">def</span> <span class="nf">_stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">thread_kill_event</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
 
+  <span class="k">def</span> <span class="nf">_copy_session</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+    <span class="k">return</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="p">)</span>
+
   <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">return</span> <span class="sa">f</span><span class="s2">"&lt;Sub30 (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_url</span><span class="si">}</span><span class="s2">)&gt;"</span>
 
@@ -447,7 +451,8 @@
       <span class="n">cont</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
       <span class="k">if</span> <span class="n">cont</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"&lt;html&gt;"</span><span class="p">):</span>
         <span class="n">cont</span> <span class="o">=</span> <span class="s2">":: HTML page ::"</span>
-      <span class="n">log_and_exit</span><span class="p">(</span><span class="s2">"  "</span> <span class="o">+</span> <span class="n">cont</span><span class="p">)</span>
+      <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">"  "</span> <span class="o">+</span> <span class="n">cont</span><span class="p">)</span>
+      <span class="k">raise</span>
 
     <span class="n">out</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
     <span class="k">try</span><span class="p">:</span>
