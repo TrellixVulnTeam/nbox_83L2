@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="NBX-Jobs" href="nbox.jobs.html" /><link rel="prev" title="NimbleBox Monitoring" href="nbox.lmao.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2021.11.23"/>
-        <title>Operators - nbox 0.9.29 documentation</title>
+        <title>Operators - nbox 0.9.34 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
@@ -122,7 +122,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">nbox 0.9.29 documentation</div></a>
+      <a href="index.html"><div class="brand">nbox 0.9.34 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -145,7 +145,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">nbox 0.9.29 documentation</span>
+  <span class="sidebar-brand-text">nbox 0.9.34 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -269,10 +269,199 @@ certainly if we come up with that high abstraction we will refactor this:</p>
 <li><p>deploy, …: All the services in NBX-Jobs.</p></li>
 <li><p>get_nbx_flow: which is the static code analysis system to understand true user intent and    if possible (and permission of the user) optimise the logic.</p></li>
 </ol>
+<dl class="py class">
+<dt class="sig sig-object py" id="nbox.operator.OperatorType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nbox.operator.</span></span><span class="sig-name descname"><span class="pre">OperatorType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/operator.html#OperatorType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.operator.OperatorType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>This Enum does not concern the user, however I am describing it so people can get a feel of the breadth
+of what nbox can do. The purpose of <code class="docutils literal notranslate"><span class="pre">Operator</span></code> is to build an abstract representation of any possible compute
+and execute them in any fashion needed to improve the overall performance of any distributed software system.
+Here are the different types of operators:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">UNSET</span></code>: this is the default mode and is like using vanilla python without any nbox features.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">JOB</span></code>: In this case the process is run as a batch process and the I/O of values is done using Relics</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SERVING</span></code>: In this case the process is run as an API proces</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WRAP</span></code>: When we wrap a function as an <code class="docutils literal notranslate"><span class="pre">Operator</span></code></p></li>
+</ol>
 <dl class="py attribute">
+<dt class="sig sig-object py" id="nbox.operator.OperatorType.UNSET">
+<span class="sig-name descname"><span class="pre">UNSET</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'unset'</span></em><a class="headerlink" href="#nbox.operator.OperatorType.UNSET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nbox.operator.OperatorType.JOB">
+<span class="sig-name descname"><span class="pre">JOB</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'from_job'</span></em><a class="headerlink" href="#nbox.operator.OperatorType.JOB" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nbox.operator.OperatorType.SERVING">
+<span class="sig-name descname"><span class="pre">SERVING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'from_serving'</span></em><a class="headerlink" href="#nbox.operator.OperatorType.SERVING" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nbox.operator.OperatorType.WRAP">
+<span class="sig-name descname"><span class="pre">WRAP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'function_wrap'</span></em><a class="headerlink" href="#nbox.operator.OperatorType.WRAP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
+<dl class="py class">
 <dt class="sig sig-object py" id="nbox.operator.Operator">
-<span class="sig-prename descclassname"><span class="pre">nbox.operator.</span></span><span class="sig-name descname"><span class="pre">Operator</span></span><a class="reference internal" href="_modules/nbox/operator.html#Operator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.operator.Operator" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference internal" href="#nbox.operator.Operator" title="nbox.operator.Operator"><code class="xref py py-class docutils literal notranslate"><span class="pre">nbox.operator.Operator</span></code></a></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nbox.operator.</span></span><span class="sig-name descname"><span class="pre">Operator</span></span><a class="reference internal" href="_modules/nbox/operator.html#Operator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.operator.Operator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Create an operator, which abstracts your code into sharable, bulding blocks which
+can then deployed on either NBX-Jobs or NBX-Deploy.</p>
+<p>Usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyOperator</span><span class="p">(</span><span class="n">Operator</span><span class="p">):</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
+    <span class="o">...</span> <span class="c1"># initialisation of job happens here</span>
+
+    <span class="c1"># use prebuilt operators to define the entire process</span>
+    <span class="kn">from</span> <span class="nn">nbox.lib.shell</span> <span class="kn">import</span> <span class="n">Shell</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">download_binary</span> <span class="o">=</span> <span class="n">Shell</span><span class="p">(</span><span class="s2">"wget https://nbox.ai/</span><span class="si">{hash}</span><span class="s2">"</span><span class="p">)</span>
+
+    <span class="c1"># keep a library of organisation wide operators</span>
+    <span class="kn">from</span> <span class="nn">.nbx_internal.operators</span> <span class="kn">import</span> <span class="n">TrainGPT</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">train_model</span><span class="p">:</span> <span class="n">Operator</span> <span class="o">=</span> <span class="n">TrainGPT</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
+    <span class="c1"># pass any inputs you want at runtime</span>
+    <span class="o">...</span> <span class="c1"># execute code in any arbitrary order, free from DAGs</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">download_binary</span><span class="p">(</span><span class="nb">hash</span><span class="o">=</span><span class="s2">"my_binary"</span><span class="p">)</span> <span class="c1"># pass relevant data at runtime</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">train_model</span><span class="p">()</span> <span class="c1"># run any operation and get full visibility on platform</span>
+
+<span class="c1"># to convert operator is</span>
+<span class="n">job</span><span class="p">:</span> <span class="n">Operator</span> <span class="o">=</span> <span class="n">MyOperator</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+
+<span class="c1"># deploy this as a batch process or API endpoint or API endpoint</span>
+<span class="n">job</span><span class="o">.</span><span class="n">deploy</span><span class="p">()</span> <span class="c1"># WIP # WIP</span>
+</pre></div>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nbox.operator.Operator.node">
+<span class="sig-name descname"><span class="pre">node</span></span><a class="headerlink" href="#nbox.operator.Operator.node" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="nbox.operator.Operator.source_edges">
+<span class="sig-name descname"><span class="pre">source_edges</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">dag_pb2.Node</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#nbox.operator.Operator.source_edges" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.operator.Operator.remote_init">
+<span class="sig-name descname"><span class="pre">remote_init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/operator.html#Operator.remote_init"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.operator.Operator.remote_init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Triggers <cite>__remote_init__</cite> across the entire tree.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.operator.Operator.to_airflow_operator">
+<span class="sig-name descname"><span class="pre">to_airflow_operator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nbox.operator.Operator.to_airflow_operator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.operator.Operator.to_airflow_dag">
+<span class="sig-name descname"><span class="pre">to_airflow_dag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nbox.operator.Operator.to_airflow_dag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.operator.Operator.from_airflow_operator">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_airflow_operator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nbox.operator.Operator.from_airflow_operator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.operator.Operator.from_airflow_dag">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_airflow_dag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nbox.operator.Operator.from_airflow_dag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.operator.Operator.to_prefect_task">
+<span class="sig-name descname"><span class="pre">to_prefect_task</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nbox.operator.Operator.to_prefect_task" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.operator.Operator.to_prefect_flow">
+<span class="sig-name descname"><span class="pre">to_prefect_flow</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nbox.operator.Operator.to_prefect_flow" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.operator.Operator.from_prefect_task">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_prefect_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dag</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nbox.operator.Operator.from_prefect_task" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.operator.Operator.from_prefect_flow">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_prefect_flow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dag</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nbox.operator.Operator.from_prefect_flow" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.operator.Operator.from_job">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_job</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_id_or_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">workspace_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/operator.html#Operator.from_job"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.operator.Operator.from_job" title="Permalink to this definition">¶</a></dt>
+<dd><p>latch an existing job so that it can be called as an operator.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.operator.Operator.from_serving">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_serving</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deployment_id_or_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">workspace_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/operator.html#Operator.from_serving"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.operator.Operator.from_serving" title="Permalink to this definition">¶</a></dt>
+<dd><p>Latch to an existing serving operator</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deployment_id_or_name</strong> (<em>str</em>) – The id or name of the deployment</p></li>
+<li><p><strong>token</strong> (<em>str</em>) – The token to access the deployment, get it from settings</p></li>
+<li><p><strong>workspace_id</strong> (<em>str</em><em>, </em><em>optional</em>) – The workspace id. Defaults to None.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.operator.Operator.fn">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fn</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/operator.html#Operator.fn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.operator.Operator.fn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wraps the function as an Operator, so you can use all the same methods as Operator</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.operator.Operator.propagate">
+<span class="sig-name descname"><span class="pre">propagate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/operator.html#Operator.propagate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.operator.Operator.propagate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set kwargs for each child in the Operator</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.operator.Operator.thaw">
+<span class="sig-name descname"><span class="pre">thaw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">job_pb2.Job</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/operator.html#Operator.thaw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.operator.Operator.thaw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load JobProto into this Operator</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.operator.Operator.operators">
+<span class="sig-name descname"><span class="pre">operators</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/operator.html#Operator.operators"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.operator.Operator.operators" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an iterator over all operators in the job.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.operator.Operator.named_operators">
+<span class="sig-name descname"><span class="pre">named_operators</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">memo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_duplicate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/operator.html#Operator.named_operators"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.operator.Operator.named_operators" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an iterator over all modules in the network, yielding both the name of the module
+as well as the module itself.</p>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="nbox.operator.Operator.children">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">children</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#nbox.operator.Operator" title="nbox.operator.Operator"><span class="pre">nbox.operator.Operator</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#nbox.operator.Operator.children" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get children of the operator.</p>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="nbox.operator.Operator.inputs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">inputs</span></span><a class="headerlink" href="#nbox.operator.Operator.inputs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.operator.Operator.__call__">
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/operator.html#Operator.__call__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.operator.Operator.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call self as a function.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.operator.Operator.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/operator.html#Operator.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.operator.Operator.forward" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.operator.Operator.deploy">
+<span class="sig-name descname"><span class="pre">deploy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workspace_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_or_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deployment_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'job'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resource</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">job_pb2.Resource</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_unittest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="#nbox.operator.Operator" title="nbox.operator.Operator"><span class="pre">nbox.operator.Operator</span></a></span></span><a class="reference internal" href="_modules/nbox/operator.html#Operator.deploy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.operator.Operator.deploy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uploads relevant files to the cloud and deploys as a batch process or and API endpoint, returns the relevant
+<code class="docutils literal notranslate"><span class="pre">.from_job()</span></code> or <code class="docutils literal notranslate"><span class="pre">.from_serving</span></code> Operator. This uploads the entire folder where the caller file is located.
+In which case having a <code class="docutils literal notranslate"><span class="pre">.nboxignore</span></code> and <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> will also be moved over.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>workspace_id</strong> (<em>str</em>) – The workspace id to deploy to.</p></li>
+<li><p><strong>id_or_name</strong> (<em>str</em><em>, </em><em>optional</em>) – The id or name of the deployment. Defaults to None.</p></li>
+<li><p><strong>deployment_type</strong> (<em>str</em><em>, </em><em>optional</em>) – The type of deployment. Defaults to “job”.</p></li>
+<li><p><strong>resource</strong> (<em>Resource</em><em>, </em><em>optional</em>) – The resource to deploy to. Defaults to None.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nbox.operator.Operator.parallel">
+<span class="sig-name descname"><span class="pre">parallel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/operator.html#Operator.parallel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.operator.Operator.parallel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="nbox.operator.operator">
@@ -281,18 +470,13 @@ certainly if we come up with that high abstraction we will refactor this:</p>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="nbox.operator.Machine">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nbox.operator.</span></span><span class="sig-name descname"><span class="pre">Machine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent_op</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">nbox.operator.Operator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resource</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">job_pb2.Resource</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/operator.html#Machine"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.operator.Machine" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nbox.operator.</span></span><span class="sig-name descname"><span class="pre">Machine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent_op</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#nbox.operator.Operator" title="nbox.operator.Operator"><span class="pre">nbox.operator.Operator</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">resource</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">job_pb2.Resource</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/operator.html#Machine"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.operator.Machine" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Simple class to scope the operations to a specific resource</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="nbox.operator.Machine.add_child">
-<span class="sig-name descname"><span class="pre">add_child</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">nbox.operator.Operator</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/operator.html#Machine.add_child"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.operator.Machine.add_child" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">add_child</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#nbox.operator.Operator" title="nbox.operator.Operator"><span class="pre">nbox.operator.Operator</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/nbox/operator.html#Machine.add_child"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.operator.Machine.add_child" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-</dd></dl>
-<dl class="py class">
-<dt class="sig sig-object py" id="nbox.operator.remote">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nbox.operator.</span></span><span class="sig-name descname"><span class="pre">remote</span></span><a class="reference internal" href="_modules/nbox/operator.html#remote"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nbox.operator.remote" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 </dd></dl>
 </div>
 </div>
