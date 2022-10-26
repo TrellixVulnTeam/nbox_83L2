@@ -12,11 +12,9 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from nbox.sublime.proto import relics_pb2 as proto_dot_relics__pb2
-from nbox.sublime.proto import common_pb2 as proto_dot_common__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16proto/relics_rpc.proto\x1a\x12proto/relics.proto\x1a\x12proto/common.proto\"\xa6\x01\n\x12\x43reateRelicRequest\x12\x14\n\x0cworkspace_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06region\x18\x03 \x01(\t\x12\x1d\n\x15nbx_integration_token\x18\x04 \x01(\t\x12\x17\n\x0fnbx_resource_id\x18\x05 \x01(\t\x12$\n\x0b\x62ucket_meta\x18\x06 \x01(\x0b\x32\x0f.BucketMetadata\"`\n\x11ListRelicsRequest\x12\x14\n\x0cworkspace_id\x18\x01 \x01(\t\x12\x12\n\nrelic_name\x18\x02 \x01(\t\x12\x0f\n\x07page_no\x18\x03 \x01(\x05\x12\x10\n\x08relic_id\x18\x04 \x01(\t\"B\n\x12ListRelicsResponse\x12\x16\n\x06relics\x18\x01 \x03(\x0b\x32\x06.Relic\x12\x14\n\x0ctotal_relics\x18\x02 \x01(\x05\"\x87\x01\n\x15ListRelicFilesRequest\x12\x14\n\x0cworkspace_id\x18\x01 \x01(\t\x12\x10\n\x08relic_id\x18\x02 \x01(\t\x12\x12\n\nrelic_name\x18\x03 \x01(\t\x12\x0e\n\x06prefix\x18\x04 \x01(\t\x12\x11\n\tfile_name\x18\x05 \x01(\t\x12\x0f\n\x07page_no\x18\x06 \x01(\x05\"H\n\x16ListRelicFilesResponse\x12\x19\n\x05\x66iles\x18\x01 \x03(\x0b\x32\n.RelicFile\x12\x13\n\x0btotal_files\x18\x02 \x01(\x05\x32\xbd\x03\n\nRelicStore\x12-\n\x0c\x63reate_relic\x12\x13.CreateRelicRequest\x1a\x06.Relic\"\x00\x12\x38\n\x0blist_relics\x12\x12.ListRelicsRequest\x1a\x13.ListRelicsResponse\"\x00\x12+\n\x11update_relic_meta\x12\x06.Relic\x1a\x0c.Acknowledge\"\x00\x12&\n\x0c\x64\x65lete_relic\x12\x06.Relic\x1a\x0c.Acknowledge\"\x00\x12%\n\x11get_relic_details\x12\x06.Relic\x1a\x06.Relic\"\x00\x12\'\n\x0b\x63reate_file\x12\n.RelicFile\x1a\n.RelicFile\"\x00\x12\x45\n\x10list_relic_files\x12\x16.ListRelicFilesRequest\x1a\x17.ListRelicFilesResponse\"\x00\x12/\n\x11\x64\x65lete_relic_file\x12\n.RelicFile\x1a\x0c.Acknowledge\"\x00\x12)\n\rdownload_file\x12\n.RelicFile\x1a\n.RelicFile\"\x00\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16proto/relics_rpc.proto\x12\x06relics\"\xad\x01\n\x12\x43reateRelicRequest\x12\x14\n\x0cworkspace_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06region\x18\x03 \x01(\t\x12\x1d\n\x15nbx_integration_token\x18\x04 \x01(\t\x12\x17\n\x0fnbx_resource_id\x18\x05 \x01(\t\x12+\n\x0b\x62ucket_meta\x18\x06 \x01(\x0b\x32\x16.relics.BucketMetadata\"`\n\x11ListRelicsRequest\x12\x14\n\x0cworkspace_id\x18\x01 \x01(\t\x12\x12\n\nrelic_name\x18\x02 \x01(\t\x12\x0f\n\x07page_no\x18\x03 \x01(\x05\x12\x10\n\x08relic_id\x18\x04 \x01(\t\"I\n\x12ListRelicsResponse\x12\x1d\n\x06relics\x18\x01 \x03(\x0b\x32\r.relics.Relic\x12\x14\n\x0ctotal_relics\x18\x02 \x01(\x05\"\x87\x01\n\x15ListRelicFilesRequest\x12\x14\n\x0cworkspace_id\x18\x01 \x01(\t\x12\x10\n\x08relic_id\x18\x02 \x01(\t\x12\x12\n\nrelic_name\x18\x03 \x01(\t\x12\x0e\n\x06prefix\x18\x04 \x01(\t\x12\x11\n\tfile_name\x18\x05 \x01(\t\x12\x0f\n\x07page_no\x18\x06 \x01(\x05\"O\n\x16ListRelicFilesResponse\x12 \n\x05\x66iles\x18\x01 \x03(\x0b\x32\x11.relics.RelicFile\x12\x13\n\x0btotal_files\x18\x02 \x01(\x05\"/\n\x0b\x41\x63knowledge\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\"\xae\x01\n\x05Relic\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x12\n\ncreated_on\x18\x03 \x01(\x03\x12\x15\n\rlast_modified\x18\x04 \x01(\x03\x12\x0f\n\x07starred\x18\x05 \x01(\x08\x12\x0c\n\x04tags\x18\x06 \x03(\t\x12\x14\n\x0cworkspace_id\x18\x07 \x01(\t\x12+\n\x0b\x62ucket_meta\x18\x64 \x01(\x0b\x32\x16.relics.BucketMetadata\"\xb0\x02\n\x0e\x42ucketMetadata\x12\x13\n\x0b\x62ucket_name\x18\x01 \x01(\t\x12\x0e\n\x06region\x18\x02 \x01(\t\x12/\n\x07\x62\x61\x63kend\x18\x03 \x01(\x0e\x32\x1e.relics.BucketMetadata.Backend\x12;\n\x0b\x62ucket_tags\x18\x04 \x03(\x0b\x32&.relics.BucketMetadata.BucketTagsEntry\x1a\x31\n\x0f\x42ucketTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"X\n\x07\x42\x61\x63kend\x12\t\n\x05UNSET\x10\x00\x12\n\n\x06\x41WS_S3\x10\x01\x12\x0b\n\x07GCP_GCS\x10\x02\x12\x0e\n\nAZURE_BLOB\x10\x03\x12\n\n\x06OCI_OB\x10\x04\x12\r\n\tDO_SPACES\x10\x05\"\xef\x03\n\tRelicFile\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncreated_on\x18\x02 \x01(\x03\x12\x15\n\rlast_modified\x18\x03 \x01(\x03\x12\x0f\n\x07starred\x18\x04 \x01(\x08\x12\x0c\n\x04tags\x18\x05 \x03(\t\x12\x0c\n\x04size\x18\x06 \x01(\x03\x12\x0f\n\x07\x63omment\x18\x07 \x01(\t\x12\x10\n\x08username\x18\x08 \x01(\t\x12)\n\x04type\x18\t \x01(\x0e\x32\x1b.relics.RelicFile.RelicType\x12\x14\n\x0cworkspace_id\x18\n \x01(\t\x12\x12\n\nrelic_name\x18\x0b \x01(\t\x12\x10\n\x08relic_id\x18\x0c \x01(\t\x12\x0b\n\x03url\x18\x64 \x01(\t\x12/\n\x07headers\x18\x65 \x03(\x0b\x32\x1e.relics.RelicFile.HeadersEntry\x12)\n\x04\x62ody\x18\x66 \x03(\x0b\x32\x1b.relics.RelicFile.BodyEntry\x1a.\n\x0cHeadersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a+\n\tBodyEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\",\n\tRelicType\x12\x08\n\x04\x46ILE\x10\x00\x12\n\n\x06\x46OLDER\x10\x01\x12\t\n\x05RELIC\x10\x02\x32\xbb\x04\n\nRelicStore\x12;\n\x0c\x63reate_relic\x12\x1a.relics.CreateRelicRequest\x1a\r.relics.Relic\"\x00\x12\x46\n\x0blist_relics\x12\x19.relics.ListRelicsRequest\x1a\x1a.relics.ListRelicsResponse\"\x00\x12\x39\n\x11update_relic_meta\x12\r.relics.Relic\x1a\x13.relics.Acknowledge\"\x00\x12\x34\n\x0c\x64\x65lete_relic\x12\r.relics.Relic\x1a\x13.relics.Acknowledge\"\x00\x12\x33\n\x11get_relic_details\x12\r.relics.Relic\x1a\r.relics.Relic\"\x00\x12\x35\n\x0b\x63reate_file\x12\x11.relics.RelicFile\x1a\x11.relics.RelicFile\"\x00\x12S\n\x10list_relic_files\x12\x1d.relics.ListRelicFilesRequest\x1a\x1e.relics.ListRelicFilesResponse\"\x00\x12=\n\x11\x64\x65lete_relic_file\x12\x11.relics.RelicFile\x1a\x13.relics.Acknowledge\"\x00\x12\x37\n\rdownload_file\x12\x11.relics.RelicFile\x1a\x11.relics.RelicFile\"\x00\x62\x06proto3')
 
 
 
@@ -25,55 +23,140 @@ _LISTRELICSREQUEST = DESCRIPTOR.message_types_by_name['ListRelicsRequest']
 _LISTRELICSRESPONSE = DESCRIPTOR.message_types_by_name['ListRelicsResponse']
 _LISTRELICFILESREQUEST = DESCRIPTOR.message_types_by_name['ListRelicFilesRequest']
 _LISTRELICFILESRESPONSE = DESCRIPTOR.message_types_by_name['ListRelicFilesResponse']
+_ACKNOWLEDGE = DESCRIPTOR.message_types_by_name['Acknowledge']
+_RELIC = DESCRIPTOR.message_types_by_name['Relic']
+_BUCKETMETADATA = DESCRIPTOR.message_types_by_name['BucketMetadata']
+_BUCKETMETADATA_BUCKETTAGSENTRY = _BUCKETMETADATA.nested_types_by_name['BucketTagsEntry']
+_RELICFILE = DESCRIPTOR.message_types_by_name['RelicFile']
+_RELICFILE_HEADERSENTRY = _RELICFILE.nested_types_by_name['HeadersEntry']
+_RELICFILE_BODYENTRY = _RELICFILE.nested_types_by_name['BodyEntry']
+_BUCKETMETADATA_BACKEND = _BUCKETMETADATA.enum_types_by_name['Backend']
+_RELICFILE_RELICTYPE = _RELICFILE.enum_types_by_name['RelicType']
 CreateRelicRequest = _reflection.GeneratedProtocolMessageType('CreateRelicRequest', (_message.Message,), {
   'DESCRIPTOR' : _CREATERELICREQUEST,
   '__module__' : 'proto.relics_rpc_pb2'
-  # @@protoc_insertion_point(class_scope:CreateRelicRequest)
+  # @@protoc_insertion_point(class_scope:relics.CreateRelicRequest)
   })
 _sym_db.RegisterMessage(CreateRelicRequest)
 
 ListRelicsRequest = _reflection.GeneratedProtocolMessageType('ListRelicsRequest', (_message.Message,), {
   'DESCRIPTOR' : _LISTRELICSREQUEST,
   '__module__' : 'proto.relics_rpc_pb2'
-  # @@protoc_insertion_point(class_scope:ListRelicsRequest)
+  # @@protoc_insertion_point(class_scope:relics.ListRelicsRequest)
   })
 _sym_db.RegisterMessage(ListRelicsRequest)
 
 ListRelicsResponse = _reflection.GeneratedProtocolMessageType('ListRelicsResponse', (_message.Message,), {
   'DESCRIPTOR' : _LISTRELICSRESPONSE,
   '__module__' : 'proto.relics_rpc_pb2'
-  # @@protoc_insertion_point(class_scope:ListRelicsResponse)
+  # @@protoc_insertion_point(class_scope:relics.ListRelicsResponse)
   })
 _sym_db.RegisterMessage(ListRelicsResponse)
 
 ListRelicFilesRequest = _reflection.GeneratedProtocolMessageType('ListRelicFilesRequest', (_message.Message,), {
   'DESCRIPTOR' : _LISTRELICFILESREQUEST,
   '__module__' : 'proto.relics_rpc_pb2'
-  # @@protoc_insertion_point(class_scope:ListRelicFilesRequest)
+  # @@protoc_insertion_point(class_scope:relics.ListRelicFilesRequest)
   })
 _sym_db.RegisterMessage(ListRelicFilesRequest)
 
 ListRelicFilesResponse = _reflection.GeneratedProtocolMessageType('ListRelicFilesResponse', (_message.Message,), {
   'DESCRIPTOR' : _LISTRELICFILESRESPONSE,
   '__module__' : 'proto.relics_rpc_pb2'
-  # @@protoc_insertion_point(class_scope:ListRelicFilesResponse)
+  # @@protoc_insertion_point(class_scope:relics.ListRelicFilesResponse)
   })
 _sym_db.RegisterMessage(ListRelicFilesResponse)
+
+Acknowledge = _reflection.GeneratedProtocolMessageType('Acknowledge', (_message.Message,), {
+  'DESCRIPTOR' : _ACKNOWLEDGE,
+  '__module__' : 'proto.relics_rpc_pb2'
+  # @@protoc_insertion_point(class_scope:relics.Acknowledge)
+  })
+_sym_db.RegisterMessage(Acknowledge)
+
+Relic = _reflection.GeneratedProtocolMessageType('Relic', (_message.Message,), {
+  'DESCRIPTOR' : _RELIC,
+  '__module__' : 'proto.relics_rpc_pb2'
+  # @@protoc_insertion_point(class_scope:relics.Relic)
+  })
+_sym_db.RegisterMessage(Relic)
+
+BucketMetadata = _reflection.GeneratedProtocolMessageType('BucketMetadata', (_message.Message,), {
+
+  'BucketTagsEntry' : _reflection.GeneratedProtocolMessageType('BucketTagsEntry', (_message.Message,), {
+    'DESCRIPTOR' : _BUCKETMETADATA_BUCKETTAGSENTRY,
+    '__module__' : 'proto.relics_rpc_pb2'
+    # @@protoc_insertion_point(class_scope:relics.BucketMetadata.BucketTagsEntry)
+    })
+  ,
+  'DESCRIPTOR' : _BUCKETMETADATA,
+  '__module__' : 'proto.relics_rpc_pb2'
+  # @@protoc_insertion_point(class_scope:relics.BucketMetadata)
+  })
+_sym_db.RegisterMessage(BucketMetadata)
+_sym_db.RegisterMessage(BucketMetadata.BucketTagsEntry)
+
+RelicFile = _reflection.GeneratedProtocolMessageType('RelicFile', (_message.Message,), {
+
+  'HeadersEntry' : _reflection.GeneratedProtocolMessageType('HeadersEntry', (_message.Message,), {
+    'DESCRIPTOR' : _RELICFILE_HEADERSENTRY,
+    '__module__' : 'proto.relics_rpc_pb2'
+    # @@protoc_insertion_point(class_scope:relics.RelicFile.HeadersEntry)
+    })
+  ,
+
+  'BodyEntry' : _reflection.GeneratedProtocolMessageType('BodyEntry', (_message.Message,), {
+    'DESCRIPTOR' : _RELICFILE_BODYENTRY,
+    '__module__' : 'proto.relics_rpc_pb2'
+    # @@protoc_insertion_point(class_scope:relics.RelicFile.BodyEntry)
+    })
+  ,
+  'DESCRIPTOR' : _RELICFILE,
+  '__module__' : 'proto.relics_rpc_pb2'
+  # @@protoc_insertion_point(class_scope:relics.RelicFile)
+  })
+_sym_db.RegisterMessage(RelicFile)
+_sym_db.RegisterMessage(RelicFile.HeadersEntry)
+_sym_db.RegisterMessage(RelicFile.BodyEntry)
 
 _RELICSTORE = DESCRIPTOR.services_by_name['RelicStore']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  _CREATERELICREQUEST._serialized_start=67
-  _CREATERELICREQUEST._serialized_end=233
-  _LISTRELICSREQUEST._serialized_start=235
-  _LISTRELICSREQUEST._serialized_end=331
-  _LISTRELICSRESPONSE._serialized_start=333
-  _LISTRELICSRESPONSE._serialized_end=399
-  _LISTRELICFILESREQUEST._serialized_start=402
-  _LISTRELICFILESREQUEST._serialized_end=537
-  _LISTRELICFILESRESPONSE._serialized_start=539
-  _LISTRELICFILESRESPONSE._serialized_end=611
-  _RELICSTORE._serialized_start=614
-  _RELICSTORE._serialized_end=1059
+  _BUCKETMETADATA_BUCKETTAGSENTRY._options = None
+  _BUCKETMETADATA_BUCKETTAGSENTRY._serialized_options = b'8\001'
+  _RELICFILE_HEADERSENTRY._options = None
+  _RELICFILE_HEADERSENTRY._serialized_options = b'8\001'
+  _RELICFILE_BODYENTRY._options = None
+  _RELICFILE_BODYENTRY._serialized_options = b'8\001'
+  _CREATERELICREQUEST._serialized_start=35
+  _CREATERELICREQUEST._serialized_end=208
+  _LISTRELICSREQUEST._serialized_start=210
+  _LISTRELICSREQUEST._serialized_end=306
+  _LISTRELICSRESPONSE._serialized_start=308
+  _LISTRELICSRESPONSE._serialized_end=381
+  _LISTRELICFILESREQUEST._serialized_start=384
+  _LISTRELICFILESREQUEST._serialized_end=519
+  _LISTRELICFILESRESPONSE._serialized_start=521
+  _LISTRELICFILESRESPONSE._serialized_end=600
+  _ACKNOWLEDGE._serialized_start=602
+  _ACKNOWLEDGE._serialized_end=649
+  _RELIC._serialized_start=652
+  _RELIC._serialized_end=826
+  _BUCKETMETADATA._serialized_start=829
+  _BUCKETMETADATA._serialized_end=1133
+  _BUCKETMETADATA_BUCKETTAGSENTRY._serialized_start=994
+  _BUCKETMETADATA_BUCKETTAGSENTRY._serialized_end=1043
+  _BUCKETMETADATA_BACKEND._serialized_start=1045
+  _BUCKETMETADATA_BACKEND._serialized_end=1133
+  _RELICFILE._serialized_start=1136
+  _RELICFILE._serialized_end=1631
+  _RELICFILE_HEADERSENTRY._serialized_start=1494
+  _RELICFILE_HEADERSENTRY._serialized_end=1540
+  _RELICFILE_BODYENTRY._serialized_start=1542
+  _RELICFILE_BODYENTRY._serialized_end=1585
+  _RELICFILE_RELICTYPE._serialized_start=1587
+  _RELICFILE_RELICTYPE._serialized_end=1631
+  _RELICSTORE._serialized_start=1634
+  _RELICSTORE._serialized_end=2205
 # @@protoc_insertion_point(module_scope)

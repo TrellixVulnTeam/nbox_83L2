@@ -60,7 +60,7 @@ from nbox.hyperloop.job_pb2 import Job as JobProto
 # all the sublime -> hyperloop stuff
 from nbox.sublime.lmao_client import LMAO_Stub # main stub class
 from nbox.sublime.lmao_client import (
-  Record, File, FileList, AgentDetails, RunLog, Run, InitRunRequest, ListProjectsRequest, RelicFile
+  Record, File, FileList, AgentDetails, RunLog, Run, InitRunRequest, ListProjectsRequest
 )
 from nbox.sublime.lmao_client import (
   Serving, LogBuffer, ServingHTTPLog
@@ -459,7 +459,7 @@ class Lmao():
 
     # log the files in the LMAO DB for sanity
     fl = FileList(experiment_id = self.run.experiment_id)
-    fl.files.extend([File(relic_file = RelicFile(name = x)) for x in all_files])
+    fl.files.extend([File(relic_key = x) for x in all_files])
     self.lmao.on_save(_FileList = fl)
 
   def end(self):

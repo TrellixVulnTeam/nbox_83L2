@@ -4,8 +4,6 @@ import os
 import requests
 from functools import partial
 
-from nbox.sublime.proto.relics_pb2 import *
-from nbox.sublime.proto.common_pb2 import *
 from nbox.sublime.proto.relics_rpc_pb2 import *
 
 from nbox.sublime._yql.rest_pb2 import Echo

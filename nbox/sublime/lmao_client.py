@@ -5,8 +5,6 @@ import requests
 from functools import partial
 
 from google.protobuf.timestamp_pb2 import *
-from nbox.sublime.proto.relics_pb2 import *
-from nbox.sublime.proto.common_pb2 import *
 from nbox.sublime.proto.lmao_pb2 import *
 
 from nbox.sublime._yql.rest_pb2 import Echo
@@ -112,6 +110,19 @@ class LMAO_Stub:
     _ListRunsResponse = b64_to_message(echo_resp.base64_string, _ListRunsResponse)
     return _ListRunsResponse
 
+  def get_experiment_table(self, _GetExperimentTableRequest: GetExperimentTableRequest) -> ExperimentTable:
+    echo_resp: Echo = call_rpc(
+      self.session,
+      f"{self.url}/get_experiment_table",
+      Echo(message = "GetExperimentTableRequest", base64_string=message_to_b64(_GetExperimentTableRequest), rpc_name = "get_experiment_table")
+    )
+    if echo_resp is None:
+      return None
+
+    _ExperimentTable = ExperimentTable() # predefine the output proto
+    _ExperimentTable = b64_to_message(echo_resp.base64_string, _ExperimentTable)
+    return _ExperimentTable
+
   def get_run_details(self, _Run: Run) -> Run:
     echo_resp: Echo = call_rpc(
       self.session,
@@ -150,6 +161,19 @@ class LMAO_Stub:
     _FileList = FileList() # predefine the output proto
     _FileList = b64_to_message(echo_resp.base64_string, _FileList)
     return _FileList
+
+  def delete_experiment(self, _Run: Run) -> Acknowledge:
+    echo_resp: Echo = call_rpc(
+      self.session,
+      f"{self.url}/delete_experiment",
+      Echo(message = "Run", base64_string=message_to_b64(_Run), rpc_name = "delete_experiment")
+    )
+    if echo_resp is None:
+      return None
+
+    _Acknowledge = Acknowledge() # predefine the output proto
+    _Acknowledge = b64_to_message(echo_resp.base64_string, _Acknowledge)
+    return _Acknowledge
 
   def init_serving(self, _InitRunRequest: InitRunRequest) -> Serving:
     echo_resp: Echo = call_rpc(
